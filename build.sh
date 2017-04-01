@@ -63,3 +63,5 @@ if [[ -f $rebuild_trigger ]]
 then
     rm -f $rebuild_trigger
 fi
+
+exit 0
