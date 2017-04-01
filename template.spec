@@ -13,6 +13,7 @@ Source0:        [url]#/%{name}-%{version}.tar.gz
 
 BuildArch:      x86_64
 Requires:       alsa-lib
+Requires:       Discord-installer
 Requires:       GConf2
 Requires:       glibc
 Requires:       libappindicator
