@@ -59,7 +59,7 @@ $package_manager install -y ../RPMS/$(uname -p)/*.rpm
 popd
 rm -r $HOME
 
-if [[ $rebuild = true ]]
+if [[ -f $rebuild_trigger ]]
 then
     rm -f $rebuild-trigger
 fi
