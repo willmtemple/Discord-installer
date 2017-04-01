@@ -17,6 +17,7 @@ Requires:       Discord-installer
 Requires:       GConf2
 Requires:       glibc
 Requires:       libappindicator
+Requires:       libcxx
 Requires:       libnotify
 Requires:       libstdc++
 Requires:       libXScrnSaver
