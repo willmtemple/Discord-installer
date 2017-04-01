@@ -14,7 +14,7 @@ if [[ $? = 0 ]] && [[ $(rpm -q --queryformat '%{VERSION}' $name) = $version ]]
 then
     release=$(rpm -q --queryformat '%{RELEASE}' $name)
 
-    if [[ -f $rebuild-trigger ]]
+    if [[ -f $rebuild_trigger ]]
     then
         rebuild=true
     else
@@ -61,5 +61,5 @@ rm -r $HOME
 
 if [[ -f $rebuild_trigger ]]
 then
-    rm -f $rebuild-trigger
+    rm -f $rebuild_trigger
 fi
