@@ -11,4 +11,4 @@ install:
 clean:
 	rm -rf ${DESTDIR}/*
 
-.PHONY: install clean
+.PHONY: build install clean
