@@ -11,7 +11,7 @@ License:        Custom
 URL:            https://discordapp.com/
 Source0:        [url]#/%{name}-%{version}.tar.gz
 
-BuildArch:      x86_64
+ExclusiveArch:  x86_64
 Requires:       alsa-lib
 Requires:       Discord-installer
 Requires:       GConf2
@@ -27,9 +27,9 @@ Requires:       nss
 AutoReqProv:    no
 
 %description
-All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone.
-Stop paying for TeamSpeak servers and hassling with Skype.
-Simplify your life.
+All-in-one voice and text chat for gamers that's free, secure, and works on both
+your desktop and phone. Stop paying for TeamSpeak servers and hassling with
+Skype. Simplify your life.
 
 
 %prep
@@ -43,7 +43,6 @@ Simplify your life.
 rm -rf $RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT/%{_bindir}
 mkdir -p $RPM_BUILD_ROOT/%{_datadir}/{%{lowercase_name},applications,pixmaps}
-mkdir -p $RPM_BUILD_ROOT/%{_defaultdocdir}/%{name}
 cp -R $RPM_BUILD_DIR/%{name}/* $RPM_BUILD_ROOT/%{_datadir}/%{lowercase_name}
 cp $RPM_BUILD_DIR/%{name}/*.png $RPM_BUILD_ROOT/%{_datadir}/pixmaps/%{lowercase_name}.png
 cp $RPM_BUILD_DIR/%{name}/*.desktop $RPM_BUILD_ROOT/%{_datadir}/applications
