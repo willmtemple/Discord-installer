@@ -64,4 +64,9 @@ then
     rm -f $rebuild_trigger
 fi
 
+who | while read line
+do
+    pkexec --user $(echo $line | cut -d' ' -f1) notify-send --icon $2 "$1 updated to version $version-$release"
+done
+
 exit 0
