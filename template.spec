@@ -4,7 +4,7 @@
 Name:           [name]
 Epoch:          1
 Version:        [version]
-Release:        [release]
+Release:        1
 Summary:        It's time to ditch Skype and TeamSpeak
 
 License:        Custom
