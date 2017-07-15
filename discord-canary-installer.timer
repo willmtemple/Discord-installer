@@ -1,0 +1,8 @@
+[Unit]
+Description=Updating Discord Canary
+
+[Timer]
+OnCalendar=daily
+
+[Install]
+WantedBy=timers.target

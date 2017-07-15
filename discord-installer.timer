@@ -1,0 +1,8 @@
+[Unit]
+Description=Updating Discord
+
+[Timer]
+OnCalendar=daily
+
+[Install]
+WantedBy=timers.target
