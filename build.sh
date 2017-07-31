@@ -36,23 +36,7 @@ echo $escaped_url
 spectool -g -C ../SOURCES $name.spec
 rpmbuild -bb $name.spec
 
-which dnf &> /dev/null
-
-if [[ $? = 0 ]]
-then
-    package_manager=dnf
-else
-    package_manager=yum
-fi
-
-if [[ $(rpm -q $name) = "$name-$version-1.$(uname -p)" ]]
-then
-    package_manager_command=reinstall
-else
-    package_manager_command=install
-fi
-
-$package_manager $package_manager_command -y ../RPMS/$(uname -p)/*.rpm
+pkcon install-local --allow-reinstall -y ../RPMS/$(uname -p)/*.rpm
 
 popd
 rm -r $HOME
