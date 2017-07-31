@@ -31,8 +31,6 @@ sed -i "s,\[lowercase_name\],$lowercase_name,"  $name.spec
 sed -i "s,\[url\],$url,"                        $name.spec
 sed -i "s,\[version\],$version,"                $name.spec
 
-echo $escaped_url
-
 spectool -g -C ../SOURCES $name.spec
 rpmbuild -bb $name.spec
 
