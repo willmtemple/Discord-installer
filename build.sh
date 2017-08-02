@@ -36,6 +36,13 @@ rpmbuild -bb $name.spec
 
 pkcon install-local --allow-reinstall -y ../RPMS/$(uname -p)/*.rpm
 
+if [[ $? = 0 ]]
+then
+    message="$1 updated to version $version"
+else
+    message="$1 could not be updated (pkcon exit status: $?)"
+fi
+
 popd
 rm -r $HOME
 
@@ -46,7 +53,7 @@ fi
 
 who | while read line
 do
-    pkexec --user $(echo $line | cut -d' ' -f1) notify-send --icon $2 "$1 updated to version $version"
+    pkexec --user $(echo $line | cut -d' ' -f1) notify-send --icon $2 $message
 done
 
 exit 0
