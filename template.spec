@@ -16,14 +16,14 @@ Requires:       alsa-lib
 Requires:       Discord-installer
 Requires:       GConf2
 Requires:       glibc
-Requires:       libappindicator
 Requires:       libcxx
 Requires:       libnotify
 Requires:       libstdc++
-Requires:       libXScrnSaver
-Requires:       libXtst
 Requires:       nspr
 Requires:       nss
+Requires:       %{_libdir}/libappindicator.so.1
+Requires:       %{_libdir}/libXss.so.1
+Requires:       %{_libdir}/libXtst.so.1
 AutoReqProv:    no
 
 %description
