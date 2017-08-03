@@ -58,7 +58,7 @@ fi
 
 who | while read line
 do
-    pkexec --user $(echo $line | cut -d' ' -f1) notify-send --icon $2 $message
+    pkexec --user $(echo $line | cut -d' ' -f1) notify-send --icon "$2" "$message"
 done
 
 exit 0
