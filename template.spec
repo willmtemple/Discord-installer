@@ -23,7 +23,7 @@ Requires:       nspr
 Requires:       nss
 Requires:       %{_libdir}/libappindicator.so.1
 Requires:       %{_libdir}/libXss.so.1
-Requires:       %{_libdir}/libXtst.so.1
+Requires:       %{_libdir}/libXtst.so.6
 AutoReqProv:    no
 
 %description
