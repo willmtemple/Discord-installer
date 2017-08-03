@@ -38,7 +38,12 @@ pkcon install-local --allow-reinstall -y ../RPMS/$(uname -p)/*.rpm
 
 if [[ $? = 0 ]]
 then
-    message="$1 updated to version $version"
+    if $rebuild
+    then
+        message="$1 version $version rebuilt"
+    else
+        message="$1 updated to version $version"
+    fi
 else
     message="$1 could not be updated (pkcon exit status: $?)"
 fi
