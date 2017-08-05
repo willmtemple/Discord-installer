@@ -21,9 +21,9 @@ Requires:       libnotify
 Requires:       libstdc++
 Requires:       nspr
 Requires:       nss
-Requires:       %{_libdir}/libappindicator.so.1
-Requires:       %{_libdir}/libXss.so.1
-Requires:       %{_libdir}/libXtst.so.6
+Requires:       libappindicator.so.1()(64bit)
+Requires:       libXss.so.1()(64bit)
+Requires:       libXtst.so.6()(64bit)
 AutoReqProv:    no
 
 %description
