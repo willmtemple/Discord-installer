@@ -34,7 +34,16 @@ sed -i "s,\[version\],$version,"                $name.spec
 spectool -g -C ../SOURCES $name.spec
 rpmbuild -bb $name.spec
 
-pkcon install-local --allow-reinstall -y ../RPMS/$(uname -p)/*.rpm
+which dnf &> /dev/null
+
+if [[ $? = 0 ]]
+then
+    package_manager=dnf
+else
+    package_manager=yum
+fi
+
+$package_manager reinstall -y ../RPMS/$(uname -p)/*.rpm || $package_manager install -y ../RPMS/$(uname -p)/*.rpm
 
 if [[ $? = 0 ]]
 then
@@ -45,7 +54,7 @@ then
         message="$1 updated to version $version"
     fi
 else
-    message="$1 could not be updated (pkcon exit status: $?)"
+    message="$1 could not be updated ($package_manager exit status: $?)"
 fi
 
 popd
