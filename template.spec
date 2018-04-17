@@ -22,7 +22,7 @@ Requires:       libstdc++
 Requires:       nspr
 Requires:       nss
 Requires:       libappindicator.so.1()(64bit)
-BuildRequires:  libatomic.so.1()(64bit)
+Requires:       libatomic.so.1()(64bit)
 Requires:       libXss.so.1()(64bit)
 Requires:       libXtst.so.6()(64bit)
 AutoReqProv:    no
