@@ -1,9 +1,7 @@
 [Unit]
 Description=Updating Discord
 Requires=network-online.target
-Requires=packagekit.service
 After=network-online.target
-After=packagekit.service
 
 [Service]
 Type=oneshot
