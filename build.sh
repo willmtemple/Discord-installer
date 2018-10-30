@@ -7,9 +7,7 @@ version=$(echo $url | egrep -o "$lowercase_name-[0-9.]+[0-9]" | grep -Eo [0-9.]+
 rebuild=false
 rebuild_trigger="/var/lib/discord-installer-rebuild-$name"
 
-rpm -qi $name &> /dev/null
-
-if [[ $? = 0 ]] && [[ $(rpm -q --queryformat '%{VERSION}' $name) = $version ]]
+if rpm -qi $name &> /dev/null && [[ $(rpm -q --queryformat '%{VERSION}' $name) = $version ]]
 then
     if [[ -f $rebuild_trigger ]]
     then
@@ -34,18 +32,14 @@ sed -i "s,\[version\],$version,"                $name.spec
 spectool -g -C ../SOURCES $name.spec
 rpmbuild -bb $name.spec
 
-which dnf &> /dev/null
-
-if [[ $? = 0 ]]
+if which dnf &> /dev/null
 then
     package_manager=dnf
 else
     package_manager=yum
 fi
 
-$package_manager reinstall -y ../RPMS/$(uname -p)/*.rpm || $package_manager install -y ../RPMS/$(uname -p)/*.rpm
-
-if [[ $? = 0 ]]
+if $package_manager reinstall -y ../RPMS/$(uname -p)/*.rpm || $package_manager install -y ../RPMS/$(uname -p)/*.rpm
 then
     if $rebuild
     then
