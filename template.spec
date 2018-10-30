@@ -12,17 +12,17 @@ URL:            https://discordapp.com/
 Source0:        [url]#/%{name}-%{version}.tar.gz
 
 ExclusiveArch:  x86_64
-Requires:       alsa-lib
 Requires:       Discord-installer
-Requires:       GConf2
 Requires:       glibc
-Requires:       libcxx
-Requires:       libnotify
-Requires:       libstdc++
-Requires:       nspr
-Requires:       nss
 Requires:       libappindicator.so.1()(64bit)
+Requires:       libasound.so.2()(64bit)
 Requires:       libatomic.so.1()(64bit)
+Requires:       libc++.so.1()(64bit)
+Requires:       libgconf-2.so.4()(64bit)
+Requires:       libnotify.so.4()(64bit)
+Requires:       libnspr4.so()(64bit)
+Requires:       libnss3.so()(64bit)
+Requires:       libstdc++.so.6()(64bit)
 Requires:       libXss.so.1()(64bit)
 Requires:       libXtst.so.6()(64bit)
 AutoReqProv:    no
